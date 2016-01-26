@@ -679,6 +679,10 @@ _.extend(File.prototype, {
       chunks.push(blankLine);
     }
 
+    if (! self.lazy) {
+      chunks.push('"no"+"strict"+"don\'t";\n');
+    }
+
     if (result.code) {
       chunks.push(
         // If we have a source map for result.code, push a SourceNode onto
